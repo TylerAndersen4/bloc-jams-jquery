@@ -10,6 +10,15 @@ class Player {
     return this.soundObject.getDuration();
   }
 
+  prettyTime(timeInSeconds) {
+    var secondsInteger = Math.floor(timeInSeconds)
+    var minutes = Math.floor(secondsInteger / 60);
+    var seconds = secondsInteger  - (minutes * 60)
+    var secondsString = seconds < 10 ? "0" + String(seconds) : String(seconds)
+    var timeString = String(minutes) + ":" + secondsString
+    return timeString
+  }
+
   getTime() {
     return this.soundObject.getTime();
   }
